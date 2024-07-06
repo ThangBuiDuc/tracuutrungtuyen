@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@tailwind base;
+h2 {
+  @apply text-[20px] md:text-[24px] font-semibold  text-black;
+}
+
+h3 {
+  @apply text-[16px] md:text-[18.72px] font-semibold  text-black;
+}
+
+a {
+  @apply text-black;
+}
+
+h1 {
+  @apply text-4xl;
+  @apply font-bold  text-black;
+}
+h4 {
+  @apply text-xl;
+  @apply font-semibold  text-black;
+}
+h5 {
+  @apply text-lg;
+  @apply font-semibold  text-black;
+}
+h6 {
+  @apply text-sm;
+  @apply font-semibold  text-black;
+}
+
+p {
+  @apply font-normal text-black;
+}
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
