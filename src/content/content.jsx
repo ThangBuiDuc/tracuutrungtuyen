@@ -80,7 +80,7 @@ const ViewTable = ({ hits }) => {
       <TableBody emptyContent="Không tìm thấy kết quả tìm kiếm!">
         {items.map((item) => (
           <TableRow key={item.cccd}>
-            <TableCell></TableCell>
+            <TableCell>{item.ma_dkxt}</TableCell>
             <TableCell>{item.cccd}</TableCell>
             <TableCell>{item.ho_ten}</TableCell>
             <TableCell className="text-center">{item.gioi_tinh}</TableCell>
