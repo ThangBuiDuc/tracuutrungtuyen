@@ -148,7 +148,7 @@ const Content = ({ condition, selected }) => {
           </div>
 
           <div className="flex">
-            <p className="text-justify ml-[25px]">
+            <p className="text-justify ml-[25px] truncate">
               Website:{" "}
               <a
                 href="https://hpu.edu.vn/"
@@ -156,8 +156,12 @@ const Content = ({ condition, selected }) => {
                 className="text-[#0083C2]"
               >
                 https://hpu.edu.vn
-              </a>{" "}
-              -{" "}
+              </a>
+            </p>
+          </div>
+
+          <div className="flex">
+            <p className="text-justify ml-[25px] truncate">
               <a
                 href="https://tuyensinh.hpu.edu.vn/"
                 target="_blank"
@@ -169,7 +173,7 @@ const Content = ({ condition, selected }) => {
           </div>
 
           <div className="flex">
-            <p className="text-justify ml-[25px]">
+            <p className="text-justify ml-[25px] truncate">
               Fanpage:{" "}
               <a
                 href="https://www.facebook.com/HaiPhongPrivateUniversity"

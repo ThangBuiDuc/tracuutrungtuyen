@@ -22,7 +22,7 @@ const Index = () => {
         kết quả xét tuyển đại học chính quy - xét tuyển sớm năm 2024
       </h5>
       <div className="flex flex-col gap-3">
-        <div className="flex gap-2 justify-center items-center">
+        <div className="flex gap-2 md:justify-center items-center">
           <p>Tra cứu theo:</p>
           <RadioGroup
             // label="Tra cứu theo:"
@@ -82,17 +82,25 @@ const Index = () => {
               <p className="font-semibold text-justify">
                 * Tìm kiếm theo CCCD/CMT:
               </p>
-              <p className="text-justify">
-                - Bước 1: Trong mục tra cứu theo: bạn chọn mục CCCD/CMT
+              <p className="text-justify  flex">
+                <span className="md:block hidden">-&nbsp;</span>Bước 1: Trong
+                mục tra cứu theo: bạn chọn mục CCCD/CMT
               </p>
-              <p className="text-justify">
-                - Bước 2: Gõ đầy đủ CCCD/CMT cần tìm vào ô tìm kiếm .
+              <p className="text-justify flex">
+                <span className="md:block hidden">-&nbsp;</span>Bước 2: Gõ đầy
+                đủ CCCD/CMT cần tìm vào ô tìm kiếm.
               </p>
-              <p className="text-justify">- Bước 3: Ấn vào nút Tìm kiếm</p>
+              <p className="text-justify flex">
+                <span className="md:block hidden">-&nbsp;</span>Bước 3: Ấn vào
+                nút Tìm kiếm
+              </p>
             </div>
             <div className="flex flex-col gap-2 self-center w-full border-t-1 mt-10">
-              <p className="text-[14px] pt-5 text-center">
-                Mọi thắc mắc xin liên hệ: Phòng Tuyển sinh - Hợp tác quốc tế -
+              <p className="text-[14px] pt-5 text-center flex justify-center">
+                Mọi thắc mắc xin liên hệ: <br className="block md:hidden" />
+                Phòng Tuyển sinh - Hợp tác quốc tế{" "}
+                <br className="block md:hidden" />{" "}
+                <span className="md:block hidden">&nbsp;-&nbsp;</span>
                 Trường Đại học Quản lý và Công nghệ Hải Phòng
               </p>
               <p className="text-[14px] text-center">
