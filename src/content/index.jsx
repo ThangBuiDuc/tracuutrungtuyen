@@ -44,6 +44,7 @@ const Index = () => {
           className="flex gap-1 md:w-[50%] w-full justify-center items-center self-center"
         >
           <Input
+            size="sm"
             type="text"
             label={selected === "hoten" ? "Họ và tên" : "Số CCCD/CMT"}
             variant="bordered"
@@ -52,6 +53,7 @@ const Index = () => {
             onChange={(e) => setQuery(e.target.value)}
           />
           <Button
+            className="h-12"
             isDisabled={!query}
             color="primary"
             onClick={() => {
@@ -95,7 +97,7 @@ const Index = () => {
                 nút Tìm kiếm
               </p>
             </div>
-            <div className="flex flex-col gap-2 self-center w-full border-t-1 mt-10">
+            <div className="flex flex-col gap-2 self-center w-full border-t-1 mt-8 pb-2">
               <p className="text-[14px] pt-5 text-center flex justify-center">
                 Mọi thắc mắc xin liên hệ: <br className="block md:hidden" />
                 Phòng Tuyển sinh - Hợp tác quốc tế{" "}
