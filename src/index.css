@@ -17,7 +17,7 @@ h1 {
   @apply font-bold  text-black;
 }
 h4 {
-  @apply text-xl;
+  @apply text-lg md:text-xl;
   @apply font-semibold  text-black;
 }
 h5 {

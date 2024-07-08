@@ -19,7 +19,10 @@ async function callAPi(selected, condition) {
     {
       method: "POST",
       body: JSON.stringify({
-        q: selected === "hoten" ? condition.trim() : `"${condition.trim()}"`,
+        q:
+          selected === "hoten"
+            ? `"${condition.trim()}"`
+            : `"${condition.trim()}"`,
         attributesToSearchOn: [selected === "hoten" ? "ho_ten" : "cccd"],
         limit: 1000,
       }),
@@ -64,24 +67,29 @@ const ViewTable = ({ hits }) => {
       }
     >
       <TableHeader>
-        <TableColumn>STT</TableColumn>
+        <TableColumn>Mã ĐKXT</TableColumn>
+        {/* <TableColumn>STT</TableColumn> */}
         <TableColumn>Số CCCD/CMT</TableColumn>
-        <TableColumn>Họ tên</TableColumn>
-        <TableColumn>Ngày sinh</TableColumn>
-        <TableColumn>Giới tính</TableColumn>
-        <TableColumn>Mã ngành trúng tuyển</TableColumn>
-        <TableColumn>Tên ngành trúng tuyển</TableColumn>
+        <TableColumn>Họ và tên</TableColumn>
+        <TableColumn className="text-center">Giới tính</TableColumn>
+        <TableColumn className="text-center">Ngày sinh</TableColumn>
+        <TableColumn className="text-center">Mã ngành xét tuyển</TableColumn>
+        <TableColumn>Tên ngành xét tuyển</TableColumn>
+        <TableColumn>Kết quả xét tuyển</TableColumn>
       </TableHeader>
       <TableBody emptyContent="Không tìm thấy kết quả tìm kiếm!">
-        {items.map((item, index) => (
+        {items.map((item) => (
           <TableRow key={item.cccd}>
-            <TableCell>{index + 1}</TableCell>
+            <TableCell></TableCell>
             <TableCell>{item.cccd}</TableCell>
             <TableCell>{item.ho_ten}</TableCell>
-            <TableCell>{item.ngay_sinh}</TableCell>
-            <TableCell>{item.gioi_tinh}</TableCell>
-            <TableCell>{item.nganh_trung_tuyen}</TableCell>
+            <TableCell className="text-center">{item.gioi_tinh}</TableCell>
+            <TableCell className="text-center">{item.ngay_sinh}</TableCell>
+            <TableCell className="text-center">
+              {item.nganh_trung_tuyen}
+            </TableCell>
             <TableCell>{item.ten_nganh_trung_tuyen}</TableCell>
+            <TableCell>Đủ điều kiện trúng tuyển</TableCell>
           </TableRow>
         ))}
       </TableBody>
@@ -102,30 +110,84 @@ const Content = ({ condition, selected }) => {
     <div className="pb-2 gap-3 flex flex-col">
       <ViewTable hits={data.hits} />
       <>
-        <div className="flex flex-col gap-2 self-center md:w-[50%] w-full">
-          <p className="font-semibold">Ghi chú:</p>
-          <p className="font-semibold">
-            (1) Đối với thí sinh đủ điều kiện trúng tuyển:
-          </p>
-          <p>
-            - Để chính thức trở thành tân sinh viên của Trường DH QL & CN HP,
-            thí sinh cần đăng ký nguyện vọng đã đủ điều kiện trúng tuyển trên hệ
-            thống xét tuyển của Bộ GDDT ở mức độ ưu tiên cao nhất (Nguyện vọng
-            1)
-          </p>
-          <p className="font-semibold">
+        <div className="flex flex-col gap-2 self-center w-full">
+          <p className="font-semibold text-justify">Ghi chú:</p>
+          <div className="flex">
+            <div className="w-[25px] font-semibold inline-block">(1)</div>
+            <p className="font-semibold text-justify">
+              Đối với thí sinh đủ điều kiện trúng tuyển:
+            </p>
+          </div>
+
+          <div className="flex">
+            {/* <p className="w-[25px] block">-</p> */}
+
+            <p className="ml-[25px] text-justify">
+              Để chính thức trở thành tân sinh viên của Trường Đại học Quản lý
+              và Công nghệ Hải Phòng, thí sinh cần đăng ký nguyện vọng đã đủ
+              điều kiện trúng tuyển trên Hệ thống xét tuyển của Bộ Giáo dục và
+              Đào tạo ở mức độ ưu tiên cao nhất{" "}
+              <span className="font-semibold">(Nguyện vọng 1)</span>
+            </p>
+          </div>
+          <p className="font-semibold text-justify">
             (2) Đối với thí sinh thiếu thông tin hoặc không đủ điều kiện trúng
             tuyển:
           </p>
-          <p>- Thí sinh liên hệ hotline để được tư vấn và hướng dẫn</p>
+
+          <div className="flex">
+            <p className="text-justify ml-[25px]">
+              Thí sinh liên hệ hotline để được tư vấn và hướng dẫn
+            </p>
+          </div>
+
+          <div className="flex">
+            <p className="text-justify ml-[25px]">
+              Hotline: 0901 598 698 - 0936 821 821
+            </p>
+          </div>
+
+          <div className="flex">
+            <p className="text-justify ml-[25px]">
+              Website:{" "}
+              <a
+                href="https://hpu.edu.vn/"
+                target="_blank"
+                className="text-[#0083C2]"
+              >
+                https://hpu.edu.vn
+              </a>{" "}
+              -{" "}
+              <a
+                href="https://tuyensinh.hpu.edu.vn/"
+                target="_blank"
+                className="text-[#0083C2]"
+              >
+                https://tuyensinh.hpu.edu.vn
+              </a>
+            </p>
+          </div>
+
+          <div className="flex">
+            <p className="text-justify ml-[25px]">
+              Fanpage:{" "}
+              <a
+                href="https://www.facebook.com/HaiPhongPrivateUniversity"
+                target="_blank"
+                className="text-[#0083C2]"
+              >
+                https://www.facebook.com/HaiPhongPrivateUniversity
+              </a>
+            </p>
+          </div>
         </div>
         <div className="flex flex-col gap-2 self-center w-full border-t-1">
-          <p className="text-center text-[14px] pt-5">
+          <p className="text-[14px] pt-5 text-center">
             Mọi thắc mắc xin liên hệ: Phòng Tuyển sinh - Hợp tác quốc tế -
-            Trường Đại học Quản lý & Công nghệ Hải Phòng
+            Trường Đại học Quản lý và Công nghệ Hải Phòng
           </p>
-          <p className="text-center text-[14px]">
-            Điện thoại: 0901 598 698 - 0936 821 821
+          <p className="text-[14px] text-center">
+            Hotline: 0901 598 698 - 0936 821 821
           </p>
         </div>
       </>
