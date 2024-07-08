@@ -97,17 +97,30 @@ const Index = () => {
                 nút Tìm kiếm
               </p>
             </div>
-            <div className="flex flex-col gap-2 self-center w-full border-t-1 mt-8 pb-2">
-              <p className="text-[14px] pt-5 text-center flex justify-center">
-                Mọi thắc mắc xin liên hệ: <br className="block md:hidden" />
-                Phòng Tuyển sinh - Hợp tác quốc tế{" "}
-                <br className="block md:hidden" />{" "}
-                <span className="md:block hidden">&nbsp;-&nbsp;</span>
-                Trường Đại học Quản lý và Công nghệ Hải Phòng
-              </p>
-              <p className="text-[14px] text-center">
-                Điện thoại: 0901 598 698 - 0936 821 821
-              </p>
+            <div className="md:hidden block">
+              <div className="flex flex-col gap-2 self-center w-full border-t-1 mt-8 pb-2">
+                <p className="text-[14px] pt-5 text-center flex justify-center">
+                  Mọi thắc mắc xin liên hệ:
+                  <br />
+                  Phòng Tuyển sinh - Hợp tác quốc tế
+                  <br />
+                  Trường Đại học Quản lý và Công nghệ Hải Phòng
+                </p>
+                <p className="text-[14px] text-center">
+                  Điện thoại: 0901 598 698 - 0936 821 821
+                </p>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <div className="flex flex-col gap-2 self-center w-full border-t-1">
+                <p className="text-[14px] pt-5 text-center">
+                  Mọi thắc mắc xin liên hệ: Phòng Tuyển sinh - Hợp tác quốc tế -
+                  Trường Đại học Quản lý và Công nghệ Hải Phòng
+                </p>
+                <p className="text-[14px] text-center">
+                  Hotline: 0901 598 698 - 0936 821 821
+                </p>
+              </div>
             </div>
           </>
         )}
