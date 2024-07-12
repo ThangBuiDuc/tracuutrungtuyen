@@ -84,16 +84,16 @@ const Index = () => {
               <p className="font-semibold text-justify">
                 * Tìm kiếm theo CCCD/CMT:
               </p>
-              <p className="text-justify  flex">
+              {/* <p className="text-justify  flex">
                 <span className="md:block hidden">-&nbsp;</span>Bước 1: Trong
                 mục tra cứu theo: bạn chọn mục CCCD/CMT
-              </p>
+              </p> */}
               <p className="text-justify flex">
-                <span className="md:block hidden">-&nbsp;</span>Bước 2: Gõ đầy
+                <span className="md:block hidden">-&nbsp;</span>Bước 1: Điền đầy
                 đủ CCCD/CMT cần tìm vào ô tìm kiếm.
               </p>
               <p className="text-justify flex">
-                <span className="md:block hidden">-&nbsp;</span>Bước 3: Ấn vào
+                <span className="md:block hidden">-&nbsp;</span>Bước 2: Ấn vào
                 nút Tìm kiếm
               </p>
             </div>
