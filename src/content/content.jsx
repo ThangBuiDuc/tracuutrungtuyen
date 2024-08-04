@@ -76,13 +76,14 @@ const ViewTable = ({ hits }) => {
         <TableColumn className="text-center">Mã ngành xét tuyển</TableColumn>
         <TableColumn>Tên ngành xét tuyển</TableColumn>
         <TableColumn>Kết quả xét tuyển</TableColumn>
+        <TableColumn>Kết quả xét học bổng</TableColumn>
       </TableHeader>
       <TableBody emptyContent="Không tìm thấy kết quả tìm kiếm!">
         {items.map((item) => (
           <TableRow key={item.cccd}>
             <TableCell>{item.ma_dkxt}</TableCell>
             <TableCell>{item.cccd}</TableCell>
-            <TableCell>{item.ho_ten}</TableCell>
+            <TableCell className="whitespace-nowrap">{item.ho_ten}</TableCell>
             <TableCell className="text-center">{item.gioi_tinh}</TableCell>
             <TableCell className="text-center">{item.ngay_sinh}</TableCell>
             <TableCell className="text-center">
@@ -90,6 +91,7 @@ const ViewTable = ({ hits }) => {
             </TableCell>
             <TableCell>{item.ten_nganh_trung_tuyen}</TableCell>
             <TableCell>Đủ điều kiện trúng tuyển</TableCell>
+            <TableCell>Đủ điều kiện</TableCell>
           </TableRow>
         ))}
       </TableBody>
@@ -112,78 +114,11 @@ const Content = ({ condition, selected }) => {
       <>
         <div className="flex flex-col gap-2 self-center w-full">
           <p className="font-semibold text-justify">Ghi chú:</p>
-          <div className="flex">
-            <div className="w-[25px] font-semibold inline-block">(1)</div>
-            <p className="font-semibold text-justify">
-              Đối với thí sinh đủ điều kiện trúng tuyển:
-            </p>
-          </div>
-
-          <div className="flex">
-            {/* <p className="w-[25px] block">-</p> */}
-
-            <p className="ml-[25px] text-justify">
-              Để chính thức trở thành tân sinh viên của Trường Đại học Quản lý
-              và Công nghệ Hải Phòng, thí sinh cần đăng ký nguyện vọng đã đủ
-              điều kiện trúng tuyển trên Hệ thống xét tuyển của Bộ Giáo dục và
-              Đào tạo ở mức độ ưu tiên cao nhất{" "}
-              <span className="font-semibold">(Nguyện vọng 1)</span>
-            </p>
-          </div>
           <p className="font-semibold text-justify">
-            (2) Đối với thí sinh thiếu thông tin hoặc không đủ điều kiện trúng
-            tuyển:
+            Thí sinh cần hoàn thành xác nhận nhập học trên hệ thống của Bộ Giáo
+            dục và Đào tạo trước 17h00 ngày 27/8/2024 và thực hiện các thủ tục
+            nhập học theo hướng dẫn của Nhà trường, chi tiết xem tại link.
           </p>
-
-          <div className="flex">
-            <p className="text-justify ml-[25px]">
-              Thí sinh liên hệ hotline để được tư vấn và hướng dẫn
-            </p>
-          </div>
-
-          <div className="flex">
-            <p className="text-justify ml-[25px]">
-              Hotline: 0901 598 698 - 0936 821 821
-            </p>
-          </div>
-
-          <div className="flex">
-            <p className="text-justify ml-[25px] truncate">
-              Website:{" "}
-              <a
-                href="https://hpu.edu.vn/"
-                target="_blank"
-                className="text-[#0083C2]"
-              >
-                https://hpu.edu.vn
-              </a>
-            </p>
-          </div>
-
-          <div className="flex">
-            <p className="text-justify ml-[25px] truncate">
-              <a
-                href="https://tuyensinh.hpu.edu.vn/"
-                target="_blank"
-                className="text-[#0083C2]"
-              >
-                https://tuyensinh.hpu.edu.vn
-              </a>
-            </p>
-          </div>
-
-          <div className="flex">
-            <p className="text-justify ml-[25px] truncate">
-              Fanpage:{" "}
-              <a
-                href="https://www.facebook.com/HaiPhongPrivateUniversity"
-                target="_blank"
-                className="text-[#0083C2]"
-              >
-                https://www.facebook.com/HaiPhongPrivateUniversity
-              </a>
-            </p>
-          </div>
         </div>
         <div className="md:hidden block">
           <div className="flex flex-col gap-2 self-center w-full border-t-1 mt-8 pb-2">
