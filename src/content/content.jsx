@@ -90,7 +90,7 @@ const ViewTable = ({ hits }) => {
               {item.nganh_trung_tuyen}
             </TableCell>
             <TableCell>{item.ten_nganh_trung_tuyen}</TableCell>
-            <TableCell>Đủ điều kiện trúng tuyển</TableCell>
+            <TableCell>Trúng tuyển</TableCell>
             <TableCell>Đủ điều kiện</TableCell>
           </TableRow>
         ))}
@@ -114,10 +114,13 @@ const Content = ({ condition, selected }) => {
       <>
         <div className="flex flex-col gap-2 self-center w-full">
           <p className="font-semibold text-justify">Ghi chú:</p>
-          <p className="font-semibold text-justify">
+          <p className="text-justify">
             Thí sinh cần hoàn thành xác nhận nhập học trên hệ thống của Bộ Giáo
-            dục và Đào tạo trước 17h00 ngày 27/8/2024 và thực hiện các thủ tục
-            nhập học theo hướng dẫn của Nhà trường, chi tiết xem tại link.
+            dục và Đào tạo{" "}
+            <span className="font-semibold">trước 17h00 ngày 27/8/2024</span> và
+            thực hiện các thủ tục{" "}
+            <span className="font-semibold">nhập học theo hướng dẫn</span> của
+            Nhà trường, chi tiết xem tại link.
           </p>
         </div>
         <div className="md:hidden block">
