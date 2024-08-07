@@ -91,7 +91,7 @@ const ViewTable = ({ hits }) => {
             </TableCell>
             <TableCell>{item.ten_nganh_trung_tuyen}</TableCell>
             <TableCell>Trúng tuyển</TableCell>
-            <TableCell>Đủ điều kiện</TableCell>
+            <TableCell>Đủ điều kiện xét</TableCell>
           </TableRow>
         ))}
       </TableBody>
@@ -115,8 +115,9 @@ const Content = ({ condition, selected }) => {
         <div className="flex flex-col gap-2 self-center w-full">
           <p className="font-semibold text-justify">Ghi chú:</p>
           <p className="text-justify">
-            Thí sinh cần hoàn thành xác nhận nhập học trên hệ thống của Bộ Giáo
-            dục và Đào tạo{" "}
+            Thí sinh cần{" "}
+            <span className="font-semibold">hoàn thành xác nhận nhập học</span>{" "}
+            trên hệ thống của Bộ Giáo dục và Đào tạo{" "}
             <span className="font-semibold">trước 17h00 ngày 27/8/2024</span> và
             thực hiện các thủ tục{" "}
             <span className="font-semibold">nhập học theo hướng dẫn</span> của
