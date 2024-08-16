@@ -121,7 +121,15 @@ const Content = ({ condition, selected }) => {
             <span className="font-semibold">trước 17h00 ngày 27/8/2024</span> và
             thực hiện các thủ tục{" "}
             <span className="font-semibold">nhập học theo hướng dẫn</span> của
-            Nhà trường, chi tiết xem tại link.
+            Nhà trường, chi tiết xem tại{" "}
+            <a
+              href="https://hpu.edu.vn/blogs/thong-bao/ke-hoach-nhap-hoc-dot-1"
+              target="_blank"
+              className="text-blue-600 underline uppercase"
+            >
+              link
+            </a>
+            .
           </p>
         </div>
         <div className="md:hidden block">
