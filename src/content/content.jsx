@@ -9,7 +9,7 @@ import {
   TableCell,
   Pagination,
 } from "@nextui-org/react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 async function callAPi(selected, condition) {
   return await fetch(
@@ -35,6 +35,19 @@ async function callAPi(selected, condition) {
 }
 
 const ViewTable = ({ hits }) => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const resize = (e) => {
+      setScreenWidth(e.currentTarget.innerWidth);
+    };
+
+    window.addEventListener("resize", resize);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
   const [page, setPage] = useState(1);
   const rowsPerPage = 10;
 
@@ -47,24 +60,53 @@ const ViewTable = ({ hits }) => {
     return hits.slice(start, end);
   }, [page, hits]);
 
+  console.log(screenWidth);
+
+  if (screenWidth <= 480) {
+    return (
+      <div className="p-4 border rounded-[14px] shadow-lg">
+        <div className="grid grid-cols-2 auto-rows-auto gap-1">
+          <p>Mã ĐKXT:</p>
+          <p>{items[0].ma_dkxt}</p>
+          <p>Số CCCD/CMT:</p>
+          <p>{items[0].cccd}</p>
+          <p>Họ và tên:</p>
+          <p>{items[0].ho_ten}</p>
+          <p>Giới tính:</p>
+          <p>{items[0].gioi_tinh}</p>
+          <p>Ngày sinh:</p>
+          <p>{items[0].ngay_sinh}</p>
+          <p>Mã ngành xét tuyển:</p>
+          <p>{items[0].nganh_trung_tuyen}</p>
+          <p>Tên ngành xét tuyển:</p>
+          <p>{items[0].ten_nganh_trung_tuyen}</p>
+          <p>Kết quả xét tuyển:</p>
+          <p>Trúng tuyển</p>
+          <p>Kết quả xét học bổng:</p>
+          <p>Đủ điều kiện xét</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Table
       isStriped
       isHeaderSticky
       aria-label="Bảng kết quả thông tin tra cứu trúng tuyển"
-      bottomContent={
-        <div className="flex w-full justify-center">
-          <Pagination
-            isCompact
-            showControls
-            showShadow
-            color="primary"
-            page={page}
-            total={pages}
-            onChange={(page) => setPage(page)}
-          />
-        </div>
-      }
+      // bottomContent={
+      //   <div className="flex w-full justify-center">
+      //     <Pagination
+      //       isCompact
+      //       showControls
+      //       showShadow
+      //       color="primary"
+      //       page={page}
+      //       total={pages}
+      //       onChange={(page) => setPage(page)}
+      //     />
+      //   </div>
+      // }
     >
       <TableHeader>
         <TableColumn>Mã ĐKXT</TableColumn>
@@ -113,8 +155,44 @@ const Content = ({ condition, selected }) => {
       <ViewTable hits={data.hits} />
       <>
         <div className="flex flex-col gap-2 self-center w-full">
-          <p className="font-semibold text-justify">Ghi chú:</p>
           <p className="text-justify">
+            Để chính thức trở thành Tân sinh viên của Trường Đại học Quản lý và
+            Công nghệ Hải Phòng, thí sinh cần thực hiện các bước sau:
+          </p>
+          <p className="text-justify">
+            1. Xác nhận nhập học trực tuyến trên hệ thống của Bộ GDĐT vào Trường
+            qua link:{" "}
+            <a
+              href="https://thisinh.thitotnghiepthpt.edu.vn/"
+              target="_blank"
+              className="text-blue-600 "
+            >
+              https://thisinh.thitotnghiepthpt.edu.vn/
+            </a>{" "}
+            <span className="font-semibold">trước 17h00 ngày 27/8/2024</span>.
+          </p>
+          <p className="text-justify">
+            2. Nhập học trực tiếp tại Tầng 1 Nhà A Khu Giảng đường Trường Đại
+            học Quản lý và Công nghệ Hải Phòng từ{" "}
+            <span className="font-semibold">ngày 21/8/2024.</span>.
+          </p>
+          <p className="text-justify">
+            Chi tiết thông tin về kế hoạch nhập học, xem tại:{" "}
+            <a
+              href="https://hpu.edu.vn/blogs/thong-bao/ke-hoach-nhap-hoc-dot-1"
+              target="_blank"
+              className="text-blue-600"
+            >
+              https://hpu.edu.vn/blogs/thong-bao/ke-hoach-nhap-hoc-dot-1
+            </a>
+          </p>
+          <p>
+            <span className="font-semibold">LƯU Ý</span>: Các thí sinh trúng
+            tuyển vào Trường đủ điều kiện tham gia XÉT CẤP HỌC BỔNG cần nhập học
+            đợt 1 vào Trường từ{" "}
+            <span className="font-semibold">21/8 đến 27/8/2024</span>.
+          </p>
+          {/* <p className="text-justify">
             Thí sinh cần{" "}
             <span className="font-semibold">hoàn thành xác nhận nhập học</span>{" "}
             trên hệ thống của Bộ Giáo dục và Đào tạo{" "}
@@ -130,7 +208,7 @@ const Content = ({ condition, selected }) => {
               link
             </a>
             .
-          </p>
+          </p> */}
         </div>
         <div className="md:hidden block">
           <div className="flex flex-col gap-2 self-center w-full border-t-1 mt-8 pb-2">
