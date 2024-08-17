@@ -60,30 +60,26 @@ const ViewTable = ({ hits }) => {
     return hits.slice(start, end);
   }, [page, hits]);
 
-  console.log(screenWidth);
-
   if (screenWidth <= 480) {
     return (
       <div className="p-4 border rounded-[14px] shadow-lg">
         <div className="grid grid-cols-2 auto-rows-auto gap-1">
-          <p>Mã ĐKXT:</p>
-          <p>{items[0].ma_dkxt}</p>
           <p>Số CCCD/CMT:</p>
           <p>{items[0].cccd}</p>
           <p>Họ và tên:</p>
           <p>{items[0].ho_ten}</p>
-          <p>Giới tính:</p>
-          <p>{items[0].gioi_tinh}</p>
           <p>Ngày sinh:</p>
           <p>{items[0].ngay_sinh}</p>
+          <p>Giới tính:</p>
+          <p>{items[0].gioi_tinh}</p>
           <p>Mã ngành xét tuyển:</p>
-          <p>{items[0].nganh_trung_tuyen}</p>
-          <p>Tên ngành xét tuyển:</p>
+          <p>{items[0].ma_nganh_xet_tuyen}</p>
+          <p>Tên ngành trúng tuyển:</p>
           <p>{items[0].ten_nganh_trung_tuyen}</p>
           <p>Kết quả xét tuyển:</p>
-          <p>Trúng tuyển</p>
+          <p className="font-semibold">{items[0].ket_qua_xet_tuyen}</p>
           <p>Kết quả xét học bổng:</p>
-          <p>Đủ điều kiện xét</p>
+          <p className="italic">{items[0].ket_qua_xet_hoc_bong}</p>
         </div>
       </div>
     );
@@ -109,31 +105,35 @@ const ViewTable = ({ hits }) => {
       // }
     >
       <TableHeader>
-        <TableColumn>Mã ĐKXT</TableColumn>
+        {/* <TableColumn>Mã ĐKXT</TableColumn> */}
         {/* <TableColumn>STT</TableColumn> */}
         <TableColumn>Số CCCD/CMT</TableColumn>
         <TableColumn>Họ và tên</TableColumn>
-        <TableColumn className="text-center">Giới tính</TableColumn>
         <TableColumn className="text-center">Ngày sinh</TableColumn>
+        <TableColumn className="text-center">Giới tính</TableColumn>
         <TableColumn className="text-center">Mã ngành xét tuyển</TableColumn>
-        <TableColumn>Tên ngành xét tuyển</TableColumn>
+        <TableColumn>Tên ngành trúng tuyển</TableColumn>
         <TableColumn>Kết quả xét tuyển</TableColumn>
         <TableColumn>Kết quả xét học bổng</TableColumn>
       </TableHeader>
       <TableBody emptyContent="Không tìm thấy kết quả tìm kiếm!">
         {items.map((item) => (
           <TableRow key={item.cccd}>
-            <TableCell>{item.ma_dkxt}</TableCell>
+            {/* <TableCell>{item.ma_dkxt}</TableCell> */}
             <TableCell>{item.cccd}</TableCell>
             <TableCell className="whitespace-nowrap">{item.ho_ten}</TableCell>
-            <TableCell className="text-center">{item.gioi_tinh}</TableCell>
             <TableCell className="text-center">{item.ngay_sinh}</TableCell>
+            <TableCell className="text-center">{item.gioi_tinh}</TableCell>
             <TableCell className="text-center">
-              {item.nganh_trung_tuyen}
+              {item.ma_nganh_xet_tuyen}
             </TableCell>
             <TableCell>{item.ten_nganh_trung_tuyen}</TableCell>
-            <TableCell>Trúng tuyển</TableCell>
-            <TableCell>Đủ điều kiện xét</TableCell>
+            <TableCell className="font-semibold">
+              {item.ket_qua_xet_tuyen}
+            </TableCell>
+            <TableCell className="italic">
+              {item.ket_qua_xet_hoc_bong}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
