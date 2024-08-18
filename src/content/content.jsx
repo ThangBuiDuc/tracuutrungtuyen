@@ -162,8 +162,9 @@ const Content = ({ condition, selected }) => {
       <>
         <div className="flex flex-col gap-2 self-center w-full">
           <p className="text-justify">
-            Để chính thức trở thành Tân sinh viên của Trường Đại học Quản lý và
-            Công nghệ Hải Phòng, thí sinh cần thực hiện các bước sau:
+            Ghi chú: Trong Trường hợp không tra thấy kết quả tìm kiếm, Thí sinh
+            vui lòng liên hệ Hotline/Zalo Tuyển sinh: 0901 598 698 - 0936 821
+            821 để được hướng dẫn chi tiết.
           </p>
           <p className="text-justify">
             1. Xác nhận nhập học trực tuyến trên hệ thống của Bộ GDĐT vào Trường
