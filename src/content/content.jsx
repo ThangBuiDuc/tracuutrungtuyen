@@ -63,24 +63,30 @@ const ViewTable = ({ hits }) => {
   if (screenWidth <= 480) {
     return (
       <div className="p-4 border rounded-[14px] shadow-lg">
-        <div className="grid grid-cols-2 auto-rows-auto gap-1">
-          <p>Số CCCD/CMT:</p>
-          <p>{items[0].cccd}</p>
-          <p>Họ và tên:</p>
-          <p>{items[0].ho_ten}</p>
-          <p>Ngày sinh:</p>
-          <p>{items[0].ngay_sinh}</p>
-          <p>Giới tính:</p>
-          <p>{items[0].gioi_tinh}</p>
-          <p>Mã ngành xét tuyển:</p>
-          <p>{items[0].ma_nganh_xet_tuyen}</p>
-          <p>Tên ngành trúng tuyển:</p>
-          <p>{items[0].ten_nganh_trung_tuyen}</p>
-          <p>Kết quả xét tuyển:</p>
-          <p className="font-semibold">{items[0].ket_qua_xet_tuyen}</p>
-          <p>Kết quả xét học bổng:</p>
-          <p className="italic">{items[0].ket_qua_xet_hoc_bong}</p>
-        </div>
+        {items?.length > 0 ? (
+          <div className="grid grid-cols-2 auto-rows-auto gap-1">
+            <p>Số CCCD/CMT:</p>
+            <p>{items[0].cccd}</p>
+            <p>Họ và tên:</p>
+            <p>{items[0].ho_ten}</p>
+            <p>Ngày sinh:</p>
+            <p>{items[0].ngay_sinh}</p>
+            <p>Giới tính:</p>
+            <p>{items[0].gioi_tinh}</p>
+            <p>Mã ngành xét tuyển:</p>
+            <p>{items[0].ma_nganh_xet_tuyen}</p>
+            <p>Tên ngành trúng tuyển:</p>
+            <p>{items[0].ten_nganh_trung_tuyen}</p>
+            <p>Kết quả xét tuyển:</p>
+            <p className="font-semibold">{items[0].ket_qua_xet_tuyen}</p>
+            <p>Kết quả xét học bổng:</p>
+            <p className="italic">{items[0].ket_qua_xet_hoc_bong}</p>
+          </div>
+        ) : (
+          <p className="text-center font-semibold">
+            Không tìm thấy kết quả tìm kiếm!
+          </p>
+        )}
       </div>
     );
   }
