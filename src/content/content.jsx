@@ -441,7 +441,7 @@ const ViewTable = ({ hits }) => {
                   {() => (
                     <>
                       <ModalHeader className="flex flex-col gap-1">
-                        Sinh viên đã nhập học thành công
+                        Sinh viên đã thanh toán phí nhập học thành công
                       </ModalHeader>
                       <ModalBody>
                         <p>
