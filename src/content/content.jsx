@@ -220,9 +220,9 @@ const ViewTable = ({ hits }) => {
             (c, t) => (c = c + t.soTien),
             0
           ),
-          transactionDescription: `${hits[0]?.CCCD} ${toNonAccentVietnamese(
+          transactionDescription: `PNH ${toNonAccentVietnamese(
             `${hits[0]?.HoDem.trim()} ${hits[0]?.Ten.trim()}`
-          )}`,
+          )} ${hits[0]?.CCCD}`,
           EduTransactionDescription: revenue?.result
             ?.map(
               (item) =>
