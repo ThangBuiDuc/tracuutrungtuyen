@@ -140,7 +140,7 @@ const ViewTable = ({ hits }) => {
   const [messages, setMessages] = useState();
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:8180");
+    const socket = new WebSocket("ws://api.hpu.edu.vn");
 
     socket.addEventListener("open", () => {
       console.log("WebSocket connection established");
