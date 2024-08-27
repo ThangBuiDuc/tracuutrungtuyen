@@ -424,7 +424,7 @@ const ViewTable = ({ hits }) => {
                       modal1.onOpen();
                     }}
                   >
-                    Thực hiện
+                    Thanh toán
                   </Button>
                 </TableCell>
               </TableRow>
