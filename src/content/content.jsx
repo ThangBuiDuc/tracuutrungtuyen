@@ -140,7 +140,7 @@ const ViewTable = ({ hits }) => {
   const [messages, setMessages] = useState();
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:8180");
+    const socket = new WebSocket("wss://api.hpu.edu.vn");
 
     socket.addEventListener("open", () => {
       console.log("WebSocket connection established");
@@ -441,7 +441,7 @@ const ViewTable = ({ hits }) => {
                   {() => (
                     <>
                       <ModalHeader className="flex flex-col gap-1">
-                        Sinh viên đã nhập học thành công
+                        Sinh viên đã thanh toán phí nhập học thành công
                       </ModalHeader>
                       <ModalBody>
                         <p>
