@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <div className="pl-[5vw] pr-[5vw] md:pl-[18vw] md:pr-[18vw] flex flex-col gap-12 mt-10">
       <h5 className="uppercase text-center pt-5">
-        kết quả xét tuyển đại học chính quy - Năm 2024
+        kết quả xét tuyển đại học chính quy - Năm 2025
       </h5>
       <div className="flex flex-col gap-3">
         <div className="flex gap-2 md:justify-center items-center">
